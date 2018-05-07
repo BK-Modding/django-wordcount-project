@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="/">Count a new set of text!</a>
+    <a href="{% url 'about' %}">About this site</a>
+    <h1>There are {{ total_len }} words in your text</h1>
+
+    <h1>Your text: </h1>
+    <span>{{ fulltext }}</span>
+    <br>
+    <hr>
+    The word "{{ max_occur }}" occured maximum times in the text: {{ max_occur_times }} times
+    <br>
+    <hr>
+
+    {% for word, occur in occurances.items %}
+        <span>The word "{{ word }}" appeared {{ occur }} times</span>
+        <br>
+    {% endfor %}
+
+</body>
+</html>
